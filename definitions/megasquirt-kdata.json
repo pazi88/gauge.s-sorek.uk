@@ -1,9 +1,7 @@
 {
-	"forceWifi": false,			// 
+	"forceWifi": false,
 	"wifiSSID": "Logger.S",
 	"wifiPSWD": "logger.s",
-//	"dropboxKey": "",			// To generate go to https://www.dropbox.com/developers/apps and create new app, set "Access token expiration" to "No expiration" and generate, copy token into the ""
-//	"deleteAfterUpload": true,	// Deletes files after succesfully uploading to dropbox
 	"snake": true,
 	"displayRows": 2,
 	"noMoreEntries": true,
@@ -48,7 +46,7 @@
 		{
 			"header": "Fuel usage",
 			"unit": "l/h",
-			"expr": "(x/60)*(y/1000)*(250/16.6667)*3",  // Change 328i 250cc/min to 180cc/min for green injectors 320i/323i/325i, 280cc for 330i
+			"expr": "(x/60)*(y/1000)*(900/16.6667)*3",  // Change 328i 250cc/min to 180cc/min for green injectors 320i/323i/325i, 280cc for 330i
 			"x": "Engine Speed",
 			"y": "Fuel Inj"
 		},
@@ -60,32 +58,6 @@
             "length": 2,
 			"max": 7000,
 			"dec": 0
-		},
-		{
-			"header": "Engine Load",
-			"unit": "mg/str",
-			"canId": 1528,
-            "offset": 0,
-            "length": 2,
-			"mul": 0.1,
-			"dec": 1
-		},
-		{
-			"header": "Mass Airflow",
-			"unit": "kg/h",
-			"canId": 1528,
-            "offset": 6,
-            "length": 2,
-			"dec": 1,
-			"mul": 0.036 // Converted as this shows in g/s not kg/h
-		},
-		{
-			"header": "Knock Current",
-			"unit": "°CRK",
-			"canId": 1572,
-            "offset": 3,
-            "length": 1,
-            "mul": 0.1
 		},
 		{
 			"header": "Vanos",
@@ -101,8 +73,7 @@
 			"canId": 1523,
             "offset": 0,
             "length": 2,
-            "mul": 0.1,         	// Remember about this comma when editing line below
-			"autoLogPoint": 60.0	// You can comment out or delete if you don't want to log on WOT.
+            "mul": 0.1        	// Remember about this comma when editing line below
 		},
 		{
 			"header": "Ignition Angle",
@@ -119,16 +90,6 @@
             "offset": 2,
             "length": 2,
             "mul": 0.001
-		},
-		{
-			"header": "Intake Air Temp",
-			"unit": "°C",
-			"canId": 1531,
-            "offset": 6,
-            "length": 2,
-            "mul": 0.05555555,  // Converted from °F
-            "add": -17.777777
-
 		},
 		{
 			"header": "Coolant Temp",
@@ -156,6 +117,14 @@
             "mul": 1
 		},
 		{
+			"header": "Ethanol",
+			"unit": "%",
+			"canId": 1567,
+            "offset": 0,
+            "length": 2,
+            "mul": 1
+		},
+		{
 			"header": "Battery Voltage",
 			"alias": "Battery",
 			"unit": "V",
@@ -163,50 +132,38 @@
             "offset": 2,
             "length": 2,
             "mul": 0.1
+		{
+		},
+			"header": "Fuel Pressure",
+			"unit": "KPa",
+			"canId": 1533,
+            "offset": 0,
+            "length": 2,
+            "mul": 1
 		},
 		{
-			"header": "WBO",
-			"unit": "AFR",
-			"expr": "1.7637*x + 10.29",
-			"x": "Analog 1",
-		//	"x": "Lambda 2",	// you can plug your WBO into your rear or front O2 lambda
-			"hidden": true		// set to false or delete if you use it
+			"header": "Oil Pressure",
+			"unit": "KPa",
+			"canId": 1533,
+            "offset": 2,
+            "length": 2,
+            "mul": 1
 		},
 		{
-			"header": "Analog 1",
-			"unit": "V",
-			"pin": 1,
-			"resetTime": 0,
-			"max": 5,
-			"mul": 0.001221,
-			"hidden": true
+			"header": "Radiator Temp",
+			"unit": "°C",
+			"canId": 1533,
+            "offset": 4,
+            "length": 2,
+            "mul": 1
 		},
 		{
-			"header": "Analog 2",
-			"unit": "V",
-			"pin": 2,
-			"resetTime": 0,
-			"max": 5,
-			"mul": 0.001221,
-			"hidden": true
-		},
-		{
-			"header": "Analog 3",
-			"unit": "V",
-			"pin": 3,
-			"resetTime": 0,
-			"max": 5,
-			"mul": 0.001221,
-			"hidden": true
-		},
-		{
-			"header": "Analog 4",
-			"unit": "V",
-			"pin": 4,
-			"resetTime": 0,
-			"max": 5,
-			"mul": 0.001221,
-			"hidden": true
+			"header": "Oil Temp",
+			"unit": "°C",
+			"canId": 1533,
+            "offset": 6,
+            "length": 2,
+            "mul": 1
 		}
 	]
 }
