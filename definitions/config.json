@@ -1,0 +1,204 @@
+{
+	"forceWifi": false,
+	"wifiSSID": "Logger.S",
+	"wifiPSWD": "logger.s",
+	"snake": true,
+	"displayRows": 3,
+	"displayColumns": 2,
+	"noMoreEntries": true,
+	"canSpeed": 500,
+	"forceKwp": false,
+	"ecuparam": [
+		{
+			"header": "Economy",
+			"unit": "l/100km",
+			"expr": "clip(100*x/(y+0.1))",
+			"x": "Fuel usage",
+			"y": "Speed"
+		},
+		{
+			"header": "Econ avg 1",
+			"unit": "l/100km",
+			"expr": "avg(\"Econ avg 1\",x, y)",
+			"x": "Economy",
+			"y": "Speed",
+			"avgLen": 20.0
+		},
+		{
+			"header": "Econ avg 2",
+			"unit": "l/100km",
+			"expr": "avg(\"Econ avg 2\",x, y)",
+			"x": "Economy",
+			"y": "Speed",
+			"avgLen": 20.0
+		},
+		{
+			"header": "Trip 1",
+			"unit": "km",
+			"expr": "trip(\"Trip 1\",x)",
+			"x": "Speed"
+		},
+		{
+			"header": "Trip 2",
+			"unit": "km",
+			"expr": "trip(\"Trip 2\",x)",
+			"x": "Speed"
+		},
+		{
+			"header": "Fuel usage",
+			"unit": "l/h",
+			"expr": "(x/60)*(y/1000)*(900/16.6667)*3",
+			"x": "Engine Speed",
+			"y": "Fuel Inj"
+		},
+		{
+			"header": "Engine Speed",
+			"unit": "RPM",
+            "canId": 1520,
+            "offset": 6,
+            "length": 2,
+            "reverseEndianness": true,
+			"max": 7000,
+			"dec": 0
+		},
+		{
+			"header": "Boost",
+			"unit": "Bar",
+            "canId": 1522,
+            "offset": 2,
+            "length": 2,
+            "reverseEndianness": true,
+			"mul": 0.001,
+			"add": -100,
+			"max": 2,
+			"dec": 1
+		},
+		{
+			"header": "Vanos",
+			"unit": "°CRK",
+			"canId": 1564,
+            "offset": 0,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.1
+		},
+		{
+			"header": "TPS",
+			"unit": "%",
+			"canId": 1523,
+            "offset": 0,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.1
+			"max": 100,
+			"dec": 0
+		},
+		{
+			"header": "Ignition Angle",
+			"unit": "°CRK",
+			"canId": 1521,
+            "offset": 0,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.1
+		},
+		{
+			"header": "Fuel Inj",
+			"unit": "ms",
+			"canId": 1520,
+            "offset": 2,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.001
+		},
+		{
+			"header": "CLT",
+			"unit": "°C",
+			"canId": 1522,
+            "offset": 6,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.05555555,
+            "add": -17.777777
+		},
+		{
+			"header": "Speed",
+			"unit": "km/h",
+			"canId": 1562,
+            "offset": 0,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.1
+		},
+		{
+			"header": "IACV",
+			"unit": "%",
+			"canId": 1526,
+            "offset": 6,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 1
+		},
+		{
+			"header": "Ethanol %",
+			"unit": "%",
+			"canId": 1567,
+            "offset": 0,
+            "length": 2,
+            "reverseEndianness": true,
+			"dec": 1,
+            "mul": 0.1
+		},
+		{
+			"header": "Battery Voltage",
+			"alias": "Batt V",
+			"unit": "V",
+			"canId": 1523,
+            "offset": 2,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.1
+		},
+		{
+			"header": "Fuel Pressure",
+			"alias": "Fuel Press",
+			"unit": "Bar",
+			"canId": 1533,
+            "offset": 0,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.001
+		},
+		{
+			"header": "Oil Pressure",
+			"alias": "Oil Press",
+			"unit": "Bar",
+			"canId": 1533,
+            "offset": 2,
+            "length": 2,
+            "reverseEndianness": true,
+            "mul": 0.001
+		},
+		{
+			"header": "Radiator Temp",
+			"alias": "Rad Temp",
+			"unit": "°C",
+			"canId": 1533,
+            "offset": 4,
+            "length": 2,
+            "reverseEndianness": true,
+			"dec": 1,
+            "mul": 0.1
+		},
+		{
+			"header": "Oil Temp",
+			"unit": "°C",
+			"canId": 1533,
+            "offset": 6,
+            "length": 2,
+            "reverseEndianness": true,
+			"dec": 1,
+            "mul": 0.1
+		}
+	]
+}
