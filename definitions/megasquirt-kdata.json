@@ -49,7 +49,7 @@
             "unit": "bar",
             "expr": "x*0.01-1",
             "x": "MAP",
-v"dec": 1
+            "dec": 1
         },
         {
             "header": "Engine Speed",
