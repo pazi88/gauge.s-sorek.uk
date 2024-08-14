@@ -49,7 +49,7 @@
         {
             "header": "TPS",
             "unit": "%",
-            "canId": "0x0AA",
+            "canId": "0xAA",
             "offset": 3,
             "length": 1,
             "dec": 1,
@@ -58,11 +58,47 @@
         {
             "header": "Engine RPM",
             "unit": "RPM",
-            "canId": "0x0AA",
+            "canId": "0xAA",
             "offset": 4,
             "length": 2,
             "dec": 0,
             "mul": 0.25
+        },
+        {
+            "header": "FL Wheel Speed",
+            "unit": "km/h",
+            "canId": "0xCE",
+            "offset": 0,
+            "length": 2,
+            "dec": 1,
+            "mul": 0.0625
+        },
+        {
+            "header": "FL Wheel Speed",
+            "unit": "km/h",
+            "canId": "0xCE",
+            "offset": 2,
+            "length": 2,
+            "dec": 1,
+            "mul": 0.0625
+        },
+        {
+            "header": "FL Wheel Speed",
+            "unit": "km/h",
+            "canId": "0xCE",
+            "offset": 4,
+            "length": 2,
+            "dec": 1,
+            "mul": 0.0625
+        },
+        {
+            "header": "FL Wheel Speed",
+            "unit": "km/h",
+            "canId": "0xCE",
+            "offset": 6,
+            "length": 2,
+            "dec": 1,
+            "mul": 0.0625
         }
     ]
 }
